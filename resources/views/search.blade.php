@@ -10,6 +10,15 @@
 
 <body>
 
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            <marquee behavior="" direction="">
+                <img src="https://github.com/danielhe4rt.png" alt="">
+                <h1>{{ $error }}</h1>
+            </marquee>
+        @endforeach
+    @endif
+
     <body class="bg-zinc-950 flex flex-col items-center justify-center min-h-screen ">
         <div class="flex flex-row space-x-10 mb-10 mt-10">
             <div class="bg-zinc-900 p-6 rounded-lg shadow-lg">
@@ -17,7 +26,7 @@
                     @csrf
                     <p class="text-white">Nome</p>
                     <input type="text" id="search-bar-quote" name="search-bar-quote" placeholder="KLBN11"
-                        class="text-gray-300 bg-zinc-800 
+                        class="text-gray-300 bg-zinc-800
                         border
                          border-gray-400
                           rounded-md p-2 focus:outline-none focus:border-purple-400 focus:text-white" />
